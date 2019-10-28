@@ -1,0 +1,29 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+    <a [routerLink]="['/']" class="btn btn-dark" type="button">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <span class="navbar-brand">Settings</span>
+</nav>
+<div class="container-fluid pt-5">
+
+    <div class="form-group mt-5">
+        <label>Secret key 1</label>
+        <input [(ngModel)]="key1" class="form-control">
+    </div>
+
+    <div class="form-group mt-5">
+        <label>Secret key 2</label>
+        <input [(ngModel)]="key2" class="form-control">
+    </div>
+
+    <div class="form-group mt-5">
+        <label>Secret key 3</label>
+        <input [(ngModel)]="key3" class="form-control">
+    </div>
+
+    <div class="form-group mt-5">
+        <button (click)="save()" class="btn btn-outline-info form-control">save</button>
+    </div>
+
+</div>
