@@ -1,16 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/css/all.css";
-
-
-body {
-  //background-color: lightblue;
-  //color: #ffffff;
-}
-
-input {
-  text-align: center;
-}
-
-.h {
-  display: none;
-}
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "~open-iconic/font/css/open-iconic-bootstrap";
