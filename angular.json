@@ -34,7 +34,8 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "js-sha512"
-            ]
+            ],
+            "subresourceIntegrity": true
           },
           "configurations": {
             "production": {
