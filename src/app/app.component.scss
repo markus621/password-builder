@@ -1,0 +1,25 @@
+input {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 12pt;
+  color: gray;
+
+  a {
+    font-size: 8pt;
+    float: right;
+  }
+}
+
+.card-text {
+  margin-top: 1rem;
+  font-size: 12pt;
+  text-align: center;
+  font-family: monospace;
+}
+
+.selected {
+  background-color: lightcoral;
+  transition: background-color 2s ease-out;
+}

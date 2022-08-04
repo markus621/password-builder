@@ -1,1 +1,78 @@
-<router-outlet></router-outlet>
+<nav class="navbar fixed-top navbar-dark bg-dark">
+    <a (click)="setting = false" class="btn btn-dark" type="button">
+        <span class="oi oi-home"></span>&nbsp;&nbsp;Generator
+    </a>
+
+    <a (click)="setting = true" class="btn btn-dark" type="button">
+        <span class="oi oi-cog"></span>&nbsp;&nbsp;Settings
+    </a>
+</nav>
+
+<div class="mt-5 mb-5">&nbsp;</div>
+
+<div *ngIf="setting" class="container">
+    <h3>Settings</h3>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="key1group">Secret Key 1</span>
+        </div>
+        <input [(ngModel)]="key1" aria-describedby="key1group"
+               class="form-control" type="text">
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="key2group">Secret Key 2</span>
+        </div>
+        <input [(ngModel)]="key2" aria-describedby="key2group"
+               class="form-control" type="text">
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="key3group">Secret Key 3</span>
+        </div>
+        <input [(ngModel)]="key3" aria-describedby="key3group"
+               class="form-control" type="text">
+    </div>
+
+    <div class="form-group mt-5">
+        <button (click)="saveSetting()" class="btn btn-primary form-control">save</button>
+    </div>
+
+</div>
+
+<div *ngIf="!setting" class="container">
+    <h3>Generator</h3>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="g1">Related word</span>
+        </div>
+        <input [(ngModel)]="pkey" aria-describedby="g1" class="form-control" type="text">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input [(ngModel)]="spec" id="specid" type="checkbox">
+                <label class="form-check-label" for="specid">&nbsp;special symbol</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-inline-flex flex-wrap align-items-stretch justify-content-center">
+
+        <div *ngFor="let i of list" class="card m-2" style="width: 13rem;">
+            <div #card class="card-body">
+                <h5 class="card-title">L{{i}}
+                    <a (click)="copy(result, card)" class="btn btn-sm btn-light">
+                        <span class="oi oi-share-boxed"></span>
+                    </a>
+                </h5>
+                <p #result class="card-text">{{pkey|hash:i:spec}}</p>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
